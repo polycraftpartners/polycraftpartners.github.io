@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free Market Entry Readiness Scorecard. Find out if your B2B business is ready to enter a new market. 12 questions, 3 minutes, instant result.">
+<link rel="canonical" href="https://polycraftpartners.github.io/scorecard.html">
+<title>Market Entry Readiness Scorecard - Free Tool by PolyCraft</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B2A;--deep:#1B4F8A;--mid:#2E75C8;--gold:#F4A623;--gold2:#D4880A;--white:#FFFFFF;--text:#E8EEF5;--text2:#A8BECE;--text3:#5C7A96;--border:rgba(255,255,255,.08);--card:rgba(255,255,255,.06);--green:#0B6E4F;--gbg:rgba(11,110,79,.15);--amber:#9A4E00;--ambg:rgba(154,78,0,.15);--red:#B91C1C;--rbg:rgba(185,28,28,.15)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);font-size:15px;line-height:1.6;min-height:100vh}
+.hl{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.con{max-width:720px;margin:0 auto;padding:0 28px}
+nav{background:rgba(13,27,42,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nl{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nl-gem{flex-shrink:0}
+.nl-text{display:flex;flex-direction:column;gap:0}
+.nl-poly{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#FFFFFF;letter-spacing:-.02em}
+.nl-craft{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#F4A623;letter-spacing:-.02em}
+.nl-tag{font-family:'Syne',sans-serif;font-weight:700;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,166,35,.6);display:block;margin-top:-2px}
+.back{font-size:12px;color:var(--text3);text-decoration:none;transition:color .15s}
+.back:hover{color:var(--text2)}
+.wrap{padding:52px 0 80px}
+.hdr{text-align:center;margin-bottom:44px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(244,166,35,.12);border:1px solid rgba(244,166,35,.25);border-radius:20px;padding:5px 14px;margin-bottom:18px}
+.badge span{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.htitle{font-size:clamp(28px,5vw,42px);color:var(--white);margin-bottom:12px}
+.hsub{font-size:16px;color:var(--text2);max-width:520px;margin:0 auto;line-height:1.7}
+.prog-wrap{background:rgba(255,255,255,.04);border-radius:8px;padding:14px 18px;margin-bottom:32px;display:flex;align-items:center;gap:14px}
+.prog-track{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--gold);border-radius:3px;transition:width .4s ease}
+.prog-txt{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:var(--text3);white-space:nowrap}
+.step{display:none}
+.step.active{display:block}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:20px}
+.q-section{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.q-text{font-size:17px;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.45}
+.q-hint{font-size:13px;color:var(--text3);margin-bottom:20px;font-style:italic}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.03);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;transition:all .15s;user-select:none}
+.opt:hover{border-color:rgba(244,166,35,.4);background:rgba(244,166,35,.05)}
+.opt.sel{border-color:var(--gold);background:rgba(244,166,35,.1)}
+.opt-indicator{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.opt.sel .opt-indicator{border-color:var(--gold);background:var(--gold)}
+.opt.sel .opt-indicator::after{content:'';width:6px;height:6px;background:var(--navy);border-radius:50%}
+.opt-text{font-size:14px;color:var(--text)}
+.opt.sel .opt-text{color:var(--white);font-weight:500}
+.nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.btn-prev{padding:10px 20px;background:transparent;color:var(--text2);font-family:'Syne',sans-serif;font-weight:700;font-size:12px;border:1px solid var(--border);border-radius:4px;cursor:pointer;transition:all .15s}
+.btn-prev:hover{border-color:rgba(255,255,255,.2);color:var(--white)}
+.btn-next{padding:10px 24px;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-weight:800;font-size:12px;border:none;border-radius:4px;cursor:pointer;transition:background .15s;letter-spacing:.04em}
+.btn-next:hover{background:var(--gold2)}
+.btn-next:disabled{background:rgba(255,255,255,.1);color:var(--text3);cursor:not-allowed}
+.result-wrap{display:none}
+.result-wrap.show{display:block}
+.score-display{text-align:center;margin-bottom:36px}
+.score-circle{width:100px;height:100px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Syne',sans-serif;font-weight:800;font-size:32px;border:3px solid}
+.score-label{font-size:14px;color:var(--text2)}
+.result-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.rc-header{padding:20px 24px;border-bottom:1px solid var(--border)}
+.rc-tier{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.rc-title{font-size:20px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif}
+.rc-body{padding:22px 24px}
+.rc-text{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.rc-dims{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.rc-dim{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px}
+.rc-dim-label{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.rc-dim-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:5px}
+.rc-dim-fill{height:100%;border-radius:2px}
+.rc-dim-val{font-size:11px;color:var(--text2)}
+.cta-block{background:var(--deep);border-radius:12px;padding:28px;text-align:center;margin-bottom:20px}
+.cta-block h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--white);margin-bottom:10px}
+.cta-block p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.7}
+.cta-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-weight:800;font-size:13px;text-decoration:none;border-radius:4px;transition:background .15s;margin-bottom:12px}
+.cta-primary:hover{background:var(--gold2)}
+.email-form{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:12px}
+.ef-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--white);margin-bottom:6px}
+.ef-sub{font-size:12px;color:var(--text3);margin-bottom:14px;line-height:1.6}
+.ef-row{display:flex;gap:8px}
+.ef-input{flex:1;padding:10px 13px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--white);outline:none;transition:border-color .15s}
+.ef-input:focus{border-color:var(--gold)}
+.ef-input::placeholder{color:var(--text3)}
+.ef-btn{padding:10px 18px;background:var(--navy);color:var(--gold);font-family:'Syne',sans-serif;font-weight:800;font-size:12px;border:1px solid rgba(244,166,35,.3);border-radius:4px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.ef-btn:hover{background:rgba(244,166,35,.1)}
+.ef-success{display:none;font-size:13px;color:#6EE7B7;margin-top:10px;text-align:center}
+.ef-note{font-size:11px;color:var(--text3);margin-top:9px;line-height:1.5}
+@media(max-width:600px){.rc-dims{grid-template-columns:1fr}.ef-row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nl">
+    <div class="nl-gem">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="PolyCraft diamond mark">
+        <polygon points="18,0 18,18 0,18" fill="#1B4F8A"/>
+        <polygon points="18,0 36,18 18,18" fill="#F4A623"/>
+        <polygon points="0,18 18,18 18,36" fill="#2E75C8"/>
+        <polygon points="18,18 36,18 18,36" fill="#1B4F8A" opacity="0.65"/>
+        <polygon points="18,0 36,18 18,36 0,18" fill="none" stroke="#F4A623" stroke-width="0.8" opacity="0.18"/>
+      </svg>
+    </div>
+    <div class="nl-text">
+      <div style="display:flex;align-items:baseline;gap:1px">
+        <span class="nl-poly">Poly</span><span class="nl-craft">Craft</span>
+      </div>
+      <span class="nl-tag">Enter. Build. Own.</span>
+    </div>
+  </a>
+  <a href="index.html" class="back">&larr; Back to website</a>
+</nav>
+
+<div class="con wrap">
+  <div class="hdr">
+    <div class="badge"><span>Free Assessment</span></div>
+    <h1 class="hl htitle">Market Entry Readiness Scorecard</h1>
+    <p class="hsub">12 questions across 4 dimensions. Instant result. Find out exactly where your gaps are before you spend a dollar on market entry.</p>
+  </div>
+
+  <div class="prog-wrap">
+    <div class="prog-track"><div class="prog-fill" id="prog" style="width:8%"></div></div>
+    <div class="prog-txt" id="prog-txt">Question 1 of 12</div>
+  </div>
+
+  <div id="quiz"></div>
+
+  <div class="result-wrap" id="result"></div>
+</div>
+
+<script>
+var QUESTIONS = [
+  {section:"Commercial Foundation",q:"How clearly defined is your Ideal Customer Profile for the target market?",hint:"ICP means a specific company type, size, geography, and decision-maker title.",opts:[{t:"We have not defined one yet",s:0},{t:"We have a broad category (e.g. mid-size manufacturing companies)",s:1},{t:"We have a specific profile with job title and company criteria",s:2},{t:"We have a validated ICP with data to back it up",s:3}]},
+  {section:"Commercial Foundation",q:"How many qualified prospects do you currently have in your pipeline for this market?",hint:"Qualified means they fit your ICP and have shown some form of interest or relevance.",opts:[{t:"None &mdash; we are starting from zero",s:0},{t:"A few contacts but no structured pipeline",s:1},{t:"20&ndash;50 qualified prospects",s:2},{t:"50+ qualified prospects at various stages",s:3}]},
+  {section:"Commercial Foundation",q:"What is your current close rate on qualified B2B opportunities?",hint:"Close rate = deals won divided by qualified opportunities entered.",opts:[{t:"We do not track this",s:0},{t:"Below 10%",s:1},{t:"10&ndash;25%",s:2},{t:"Above 25%",s:3}]},
+  {section:"Market Knowledge",q:"How well do you know the competitive landscape in your target market?",hint:"Can you name your top 3 competitors, their pricing, and their positioning?",opts:[{t:"We have not researched it yet",s:0},{t:"We know the market exists but not the players",s:1},{t:"We know the main competitors and how they are positioned",s:2},{t:"We have detailed intelligence on competitors, channels, and key relationships",s:3}]},
+  {section:"Market Knowledge",q:"How strong is your existing network in the target market?",hint:"Network means decision-makers, channel partners, referral sources, or industry contacts.",opts:[{t:"We have no contacts in this market",s:0},{t:"We have 1&ndash;5 contacts but no active relationships",s:1},{t:"We have some contacts and occasional conversations",s:2},{t:"We have active relationships that could open doors",s:3}]},
+  {section:"Market Knowledge",q:"How familiar are you with the buying culture and decision-making process in this market?",hint:"B2B buying culture varies significantly between US, UK, France, and MENA markets.",opts:[{t:"We have no familiarity &mdash; it is a new territory",s:0},{t:"We have done some research but no first-hand experience",s:1},{t:"We have worked with one or two clients from this market",s:2},{t:"We have deep experience operating commercially in this market",s:3}]},
+  {section:"Commercial Readiness",q:"Do you have a dedicated commercial resource for this market entry?",hint:"Commercial resource means someone whose primary job is to drive revenue in this market.",opts:[{t:"No &mdash; the founder will handle it alongside everything else",s:0},{t:"We have a junior sales person who will lead it",s:1},{t:"We have a mid-level commercial manager",s:2},{t:"We have senior commercial leadership available for this",s:3}]},
+  {section:"Commercial Readiness",q:"What is your budget for the first 12 months of market entry (excluding product)?",hint:"This covers commercial resources, tools, travel, and partner costs.",opts:[{t:"Under $10,000",s:0},{t:"$10,000&ndash;$30,000",s:1},{t:"$30,000&ndash;$80,000",s:2},{t:"Above $80,000",s:3}]},
+  {section:"Commercial Readiness",q:"Do you have a CRM or structured system for managing your pipeline and contacts?",hint:"CRM means any tool that tracks prospects, conversations, and next steps systematically.",opts:[{t:"No structured system &mdash; we use email and spreadsheets",s:0},{t:"We have a basic spreadsheet pipeline",s:1},{t:"We use a CRM but it is not fully adopted",s:2},{t:"We have a fully adopted CRM with clean data",s:3}]},
+  {section:"Strategic Clarity",q:"How clearly defined is your go-to-market strategy for this specific market?",hint:"GTM strategy includes channel, messaging, pricing, and the commercial approach.",opts:[{t:"We have not developed one yet",s:0},{t:"We have a rough plan but no detailed strategy",s:1},{t:"We have a defined strategy but have not validated it",s:2},{t:"We have a validated go-to-market strategy with clear milestones",s:3}]},
+  {section:"Strategic Clarity",q:"What is your realistic 90-day commercial goal for this market?",hint:"A realistic goal is specific, measurable, and achievable given your current resources.",opts:[{t:"We have not set a specific goal",s:0},{t:"We want to 'test the market' but have no specific target",s:1},{t:"We have a general revenue target but no activity milestones",s:2},{t:"We have specific pipeline, meeting, and revenue milestones for 90 days",s:3}]},
+  {section:"Strategic Clarity",q:"Have you secured internal alignment on this market entry initiative?",hint:"Alignment means budget approved, resources committed, and leadership supportive.",opts:[{t:"Not yet &mdash; we are still in exploratory phase",s:0},{t:"There is interest but no formal commitment yet",s:1},{t:"Budget is approved but resources are not fully allocated",s:2},{t:"Full alignment &mdash; budget, resources, and leadership committed",s:3}]}
+];
+
+var DIMS = ["Commercial Foundation","Market Knowledge","Commercial Readiness","Strategic Clarity"];
+var answers = new Array(12).fill(-1);
+var current = 0;
+
+function buildQuiz() {
+  var qd = document.getElementById('quiz');
+  QUESTIONS.forEach(function(q,i) {
+    var div = document.createElement('div');
+    div.className = 'step' + (i===0?' active':'');
+    div.id = 'step-'+i;
+    var optsHtml = q.opts.map(function(o,oi) {
+      return '<div class="opt" data-q="'+i+'" data-i="'+oi+'" data-s="'+o.s+'"><div class="opt-indicator"></div><div class="opt-text">'+o.t+'</div></div>';
+    }).join('');
+    div.innerHTML = '<div class="q-card"><div class="q-section">'+q.section+'</div><div class="q-text">'+q.q+'</div><div class="q-hint">'+q.hint+'</div><div class="opts">'+optsHtml+'</div></div><div class="nav-btns">'+(i>0?'<button class="btn-prev" onclick="prev()">Back</button>':'<span></span>')+'<button class="btn-next" id="next-'+i+'" onclick="next()" disabled>'+(i<11?'Next &rarr;':'See My Result &rarr;')+'</button></div>';
+    qd.appendChild(div);
+  });
+  qd.addEventListener('click', function(e) {
+    var opt = e.target.closest('.opt');
+    if (!opt) return;
+    var qi = parseInt(opt.dataset.q), si = parseInt(opt.dataset.s);
+    answers[qi] = si;
+    opt.closest('.opts').querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); });
+    opt.classList.add('sel');
+    document.getElementById('next-'+qi).disabled = false;
+  });
+}
+
+function updateProg() {
+  var pct = Math.round(((current+1)/12)*100);
+  document.getElementById('prog').style.width = pct+'%';
+  document.getElementById('prog-txt').textContent = 'Question '+(current+1)+' of 12';
+}
+
+function next() {
+  if (answers[current] === -1) return;
+  if (current < 11) {
+    document.getElementById('step-'+current).classList.remove('active');
+    current++;
+    document.getElementById('step-'+current).classList.add('active');
+    updateProg();
+    window.scrollTo({top:0,behavior:'smooth'});
+  } else {
+    showResult();
+  }
+}
+
+function prev() {
+  if (current > 0) {
+    document.getElementById('step-'+current).classList.remove('active');
+    current--;
+    document.getElementById('step-'+current).classList.add('active');
+    updateProg();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+
+function showResult() {
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('prog-wrap') && (document.getElementById('prog-wrap').style.display='none');
+  var rw = document.getElementById('result');
+  rw.classList.add('show');
+
+  var total = answers.reduce(function(a,b){return a+b;},0);
+  var maxScore = 36;
+  var pct = Math.round((total/maxScore)*100);
+
+  // Dimension scores (3 questions each)
+  var dims = [
+    {label:'Commercial Foundation',score:answers[0]+answers[1]+answers[2],max:9},
+    {label:'Market Knowledge',score:answers[3]+answers[4]+answers[5],max:9},
+    {label:'Commercial Readiness',score:answers[6]+answers[7]+answers[8],max:9},
+    {label:'Strategic Clarity',score:answers[9]+answers[10]+answers[11],max:9}
+  ];
+
+  var tier, tierColor, tierBg, tierTitle, tierText, tierService, tierCTA;
+  if (pct < 35) {
+    tier = 'Foundation Stage'; tierColor = '#60A5FA'; tierBg = 'rgba(96,165,250,.15)';
+    tierTitle = 'Your market entry requires foundation work first.';
+    tierText = 'Your score indicates that the commercial foundation &mdash; ICP definition, pipeline structure, market knowledge &mdash; needs to be built before any execution begins. Entering the market now without this foundation is the most common reason B2B companies waste their market entry budget. The right starting point is a structured Commercial Market Entry engagement that maps the market, defines the approach, and builds the pipeline before a single outreach is made.';
+    tierService = 'Service 1 &mdash; Commercial Market Entry';
+    tierCTA = 'Based on your score, a discovery call will help you understand exactly what foundation work is needed, in what order, and what it realistically costs. Most clients in this stage see their first qualified conversations within 8 to 10 weeks.';
+  } else if (pct < 65) {
+    tier = 'Execution Ready'; tierColor = var_gold = '#F4A623'; tierBg = 'rgba(244,166,35,.15)';
+    tierTitle = 'You have the foundation. What you need is senior commercial direction.';
+    tierText = 'Your score shows a solid foundation with clear gaps in senior commercial execution. You know who your customer is, you have some pipeline, and you understand the market &mdash; but the revenue is not moving at the pace the opportunity demands. This is the most common stage for high-potential B2B companies: the foundation is there but without senior commercial direction to drive it, it stalls. The right next step is embedding a Fractional Commercial Director to own the pipeline, manage the key relationships, and drive the revenue trajectory.';
+    tierService = 'Service 2 &mdash; Fractional Commercial Director';
+    tierCTA = 'A discovery call will diagnose specifically where the execution gap is and what senior commercial direction would look like for your business. Most clients at this stage see measurable pipeline movement within 60 to 90 days of engagement.';
+  } else {
+    tier = 'Scale Ready'; tierColor = '#22C55E'; tierBg = 'rgba(34,197,94,.15)';
+    tierTitle = 'Your commercial engine is working. The question is whether it can scale.';
+    tierText = 'Your score indicates a mature commercial operation with strong fundamentals across all four dimensions. You have a defined ICP, a working pipeline, market knowledge, and strategic clarity. The next challenge is not building the foundation &mdash; it is scaling the execution faster than one senior commercial partner can carry it. The question to answer is whether a trained commercial team, deployed correctly, can multiply what you have built without diluting the quality that got you here.';
+    tierService = 'Service 3 &mdash; Commercial Team Build and Deployment';
+    tierCTA = 'A discovery call will help you assess whether the commercial engine is genuinely ready to scale, what team deployment would look like, and whether Build to Transfer or Build to Retain is the right model for your situation.';
+  }
+
+  var dimBars = dims.map(function(d) {
+    var dpct = Math.round((d.score/d.max)*100);
+    var c = dpct<40?'#60A5FA':dpct<70?'#F4A623':'#22C55E';
+    return '<div class="rc-dim"><div class="rc-dim-label">'+d.label+'</div><div class="rc-dim-bar"><div class="rc-dim-fill" style="width:'+dpct+'%;background:'+c+'"></div></div><div class="rc-dim-val">'+d.score+' / '+d.max+'</div></div>';
+  }).join('');
+
+  rw.innerHTML = '<div class="score-display"><div class="score-circle" style="color:'+tierColor+';border-color:'+tierColor+';background:'+tierBg+'">'+pct+'%</div><div class="score-label">Overall readiness score</div></div>' +
+  '<div class="result-card"><div class="rc-header"><div class="rc-tier" style="color:'+tierColor+'">'+tier+'</div><div class="rc-title">'+tierTitle+'</div></div><div class="rc-body"><div class="rc-text">'+tierText+'</div><div class="rc-dims">'+dimBars+'</div><div class="rc-text" style="border-top:1px solid rgba(255,255,255,.07);padding-top:14px;margin-top:4px"><strong style="color:#fff;font-weight:600">Recommended next step: '+tierService+'</strong></div></div></div>' +
+  '<div class="cta-block"><h3>Book a free discovery call</h3><p>'+tierCTA+'</p><a href="https://cal.com/dany-kanzari-nf8bt3/polycraft-discovery-call" target="_blank" rel="noopener" class="cta-primary" style="display:inline-flex">Book a 45-Minute Discovery Call &rarr;</a><br><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Free. No obligation. No sales pressure.</div></div>' +
+  '<div class="email-form"><div class="ef-title">Not ready to book yet?</div><div class="ef-sub">Enter your work email and we will send you the full Market Entry Playbook &mdash; the five things every B2B company must get right before entering a new market. Plus a follow-up guide based on your score.</div><div class="ef-row"><input type="email" id="ef-email" class="ef-input" placeholder="your.name@company.com"><button class="ef-btn" onclick="submitEmail()">Send Me the Guide</button></div><div class="ef-success" id="ef-success">Done. Check your inbox within a few minutes.</div><div class="ef-note">We send useful content, not spam. Unsubscribe at any time.</div></div>';
+}
+
+function submitEmail() {
+  var email = document.getElementById('ef-email').value.trim();
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+  // Brevo API integration
+  // Replace YOUR_BREVO_LIST_ID with your actual Brevo list ID (found in Contacts > Lists)
+  var BREVO_LIST_ID = 'YOUR_BREVO_LIST_ID';
+  var BREVO_API_KEY = 'YOUR_BREVO_API_KEY';
+  // Store score data for personalisation
+  var total = answers.reduce(function(a,b){return a+b;},0);
+  var pct = Math.round((total/36)*100);
+  var tier = pct<35?'Foundation Stage':pct<65?'Execution Ready':'Scale Ready';
+  fetch('https://api.brevo.com/v3/contacts', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','api-key':BREVO_API_KEY},
+    body: JSON.stringify({email:email,listIds:[parseInt(BREVO_LIST_ID)],attributes:{SCORE:pct,TIER:tier},updateEnabled:true})
+  }).then(function() {
+    document.getElementById('ef-success').style.display='block';
+    document.getElementById('ef-email').disabled = true;
+    document.querySelector('.ef-btn').disabled = true;
+  }).catch(function() {
+    document.getElementById('ef-success').style.display='block';
+    document.getElementById('ef-success').textContent='Done. Check your inbox within a few minutes.';
+  });
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
