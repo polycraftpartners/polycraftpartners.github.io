@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2128;--border:#21262d;--border2:#30363d;--gold:#F4A623;--gold2:rgba(244,166,35,.10);--gold3:rgba(244,166,35,.18);--text:#e6edf3;--muted:#8b949e;--muted2:#6e7681;--card:#161b22}
+:root{--bg:#0F1923;--bg2:#162032;--bg3:#1a2840;--border:#1e2d3d;--border2:#243548;--gold:#F4A623;--gold2:rgba(244,166,35,.08);--gold3:rgba(244,166,35,.16);--text:#e8eef4;--muted:#8a9db5;--muted2:#5d7a96;--card:#162032}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -17,7 +17,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s;border-bottom:1px solid transparent;padding:0 40px}
-nav.scrolled{background:rgba(13,17,23,.96);border-color:var(--border);backdrop-filter:blur(12px)}
+nav.scrolled{background:rgba(15,25,35,.96);border-color:var(--border);backdrop-filter:blur(12px)}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
 .logo-name{font-size:17px;font-weight:800;letter-spacing:.08em}
@@ -29,7 +29,7 @@ nav.scrolled{background:rgba(13,17,23,.96);border-color:var(--border);backdrop-f
 .nav-cta{background:var(--gold);color:#0d1117;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border-radius:8px;transition:opacity .2s}
 .nav-cta:hover{opacity:.88;color:#0d1117}
 .hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--text);padding:4px}
-.mobile-menu{display:none;background:rgba(13,17,23,.98);border-bottom:1px solid var(--border);padding:16px 40px 24px}
+.mobile-menu{display:none;background:rgba(15,25,35,.98);border-bottom:1px solid var(--border);padding:16px 40px 24px}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:12px 0;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:600}
 .mobile-cta{margin-top:16px;display:block;background:var(--gold)!important;color:#0d1117!important;text-align:center;padding:13px;border-radius:8px;border:none!important}
@@ -54,17 +54,17 @@ h3{font-size:18px;font-weight:700;line-height:1.3}
 hr.divider{border:none;border-top:1px solid var(--border)}
 
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:80px;position:relative;overflow:hidden;text-align:center}
-.hero-glow{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(244,166,35,.10) 0%,transparent 70%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(244,166,35,.3);background:rgba(244,166,35,.06);color:var(--gold);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:8px 18px;border-radius:100px;margin-bottom:36px}
+.hero-diamond{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:480px;height:480px;opacity:.12;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(244,166,35,.3);background:rgba(244,166,35,.06);color:var(--gold);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:8px 18px;border-radius:100px;margin-bottom:32px}
 .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.hero-h1{font-size:clamp(40px,6.5vw,74px);font-weight:800;line-height:1.07;letter-spacing:-.02em}
-.hero-tagline{font-size:15px;color:var(--muted);margin:14px 0 8px;font-family:'Instrument Serif',serif;font-style:italic}
-.hero-body{font-size:15px;color:var(--muted);max-width:680px;margin:20px auto 0;line-height:1.75}
+.hero-h1{font-size:clamp(32px,4.5vw,54px);font-weight:800;line-height:1.1;letter-spacing:-.015em;max-width:700px;margin:0 auto}
+.hero-tagline{font-size:14px;color:var(--muted);margin:14px 0 0;font-family:'Instrument Serif',serif;font-style:italic}
+.hero-body{font-size:15px;color:var(--muted);max-width:640px;margin:18px auto 0;line-height:1.75}
 .hero-body strong{color:var(--text)}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:40px 0 72px}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid var(--border);padding-top:48px;max-width:900px;margin:0 auto}
-.stat-value{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--gold);margin-bottom:4px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:32px 0 12px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid var(--border);padding-top:44px;max-width:860px;margin:0 auto}
+.stat-value{font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--gold);margin-bottom:4px}
 .stat-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:var(--muted);animation:bounce 2s infinite}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
@@ -73,7 +73,7 @@ hr.divider{border:none;border-top:1px solid var(--border)}
 .problem-num{font-size:48px;font-weight:800;color:rgba(244,166,35,.12);margin-bottom:16px;line-height:1;transition:color .2s}
 .card:hover .problem-num{color:rgba(244,166,35,.22)}
 .icp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.icp-card{display:flex;gap:14px;align-items:flex-start;background:rgba(13,17,23,.6);border:1px solid var(--border);border-radius:14px;padding:18px 20px;transition:border-color .2s}
+.icp-card{display:flex;gap:14px;align-items:flex-start;background:rgba(15,25,35,.6);border:1px solid var(--border);border-radius:14px;padding:18px 20px;transition:border-color .2s}
 .icp-card:hover{border-color:rgba(244,166,35,.28)}
 .icp-arrow{color:var(--gold);font-weight:700;font-size:15px;flex-shrink:0;margin-top:2px}
 .icp-text{font-size:13px;color:var(--muted);line-height:1.65}
@@ -114,14 +114,23 @@ hr.divider{border:none;border-top:1px solid var(--border)}
 .why-bar{width:32px;height:2px;background:var(--gold);margin-bottom:20px;transition:width .3s}
 .why-card:hover .why-bar{width:56px}
 
-.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.founder-photo{aspect-ratio:4/5;border-radius:20px;background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative}
-.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-.founder-badge{position:absolute;bottom:-12px;right:-12px;background:var(--gold);color:#0d1117;padding:8px 16px;border-radius:10px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.founder-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
-.founder-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
-.founder-stat-val{font-size:24px;font-weight:800;color:var(--gold);margin-bottom:2px}
-.founder-stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.founder-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.founder-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;text-align:center}
+.founder-avatar{width:120px;height:120px;border-radius:50%;border:3px solid var(--gold);overflow:hidden;margin:0 auto 20px;background:var(--bg3)}
+.founder-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.founder-card-name{font-size:18px;font-weight:700;margin-bottom:4px}
+.founder-card-title{font-size:12px;color:var(--muted);margin-bottom:24px}
+.founder-meta{display:flex;flex-direction:column;gap:14px;text-align:left;margin-bottom:24px}
+.founder-meta-row{display:flex;gap:16px;align-items:flex-start}
+.founder-meta-key{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);width:72px;flex-shrink:0;padding-top:1px}
+.founder-meta-val{font-size:12px;color:var(--muted);line-height:1.5}
+.lang-pills{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.lang-pill{background:rgba(244,166,35,.08);border:1px solid rgba(244,166,35,.2);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--gold);font-weight:600}
+.founder-story-label{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.founder-story-h{font-size:clamp(24px,3.5vw,34px);font-weight:800;line-height:1.2;margin-bottom:20px}
+.founder-story-quote{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.65;margin-bottom:20px}
+.founder-story-body{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:14px}
+.founder-story-body .highlight{color:var(--gold);font-weight:700}
 
 .markets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .mkt-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;transition:border-color .2s}
@@ -172,22 +181,24 @@ hr.divider{border:none;border-top:1px solid var(--border)}
 .success-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(244,166,35,.3);background:rgba(244,166,35,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
 
 footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(--bg)}
-.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:48px}
-.footer-brand{font-size:16px;font-weight:800;letter-spacing:.08em;margin-bottom:12px}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:40px;margin-bottom:40px}
+.footer-brand{font-size:16px;font-weight:800;letter-spacing:.08em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .footer-brand span{color:var(--gold)}
-.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:260px;font-family:'Instrument Serif',serif;font-style:italic}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:240px;font-family:'Instrument Serif',serif;font-style:italic}
 .footer-col-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text);margin-bottom:16px}
 .footer-links{display:flex;flex-direction:column;gap:8px}
 .footer-links a{font-size:13px;color:var(--muted);transition:color .2s;cursor:pointer}
 .footer-links a:hover{color:var(--gold)}
-.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid var(--border);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid var(--border);padding-top:20px;text-align:center}
 .footer-bottom p{font-size:11px;color:var(--muted2)}
-.footer-legal{display:flex;gap:20px}
-.footer-legal a{font-size:11px;color:var(--muted2);transition:color .2s;cursor:pointer}
-.footer-legal a:hover{color:var(--gold)}
-
-.legal-page{display:none;padding:120px 40px 80px}
+.legal-page{display:none;padding:0 0 80px}
 .legal-page.active{display:block}
+.legal-nav{background:rgba(15,25,35,.97);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:50}
+.legal-nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.legal-nav-title{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em}
+.legal-back-btn{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;background:none;border:none;font-family:'Syne',sans-serif;transition:gap .2s}
+.legal-back-btn:hover{gap:10px}
+.legal-content{padding:56px 40px 80px;max-width:780px;margin:0 auto}
 .ls{margin-bottom:40px}
 .ls h2{font-size:18px;font-weight:700;margin-bottom:16px;color:var(--text)}
 .ls h2 span{color:var(--gold);margin-right:8px}
@@ -220,7 +231,9 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   footer{padding:48px 20px 24px}
-  .legal-page{padding:100px 20px 60px}
+  .legal-nav{padding:0 20px}
+  .legal-content{padding:40px 20px 60px}
+  .hero-diamond{display:none}
 }
 @media(max-width:600px){
   .stats-grid{gap:20px}
@@ -269,12 +282,18 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-glow"></div>
+  <svg class="hero-diamond" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200 0 L400 200 L200 400 L0 200 Z" fill="none" stroke="#1B4F8A" stroke-width="1"/>
+    <path d="M200 0 L0 200 L200 200 Z" fill="#1B4F8A" opacity="0.6"/>
+    <path d="M200 0 L400 200 L200 200 Z" fill="#F4A623" opacity="0.5"/>
+    <path d="M0 200 L200 400 L200 200 Z" fill="#2E75C8" opacity="0.5"/>
+    <path d="M400 200 L200 400 L200 200 Z" fill="#1B4F8A" opacity="0.35"/>
+  </svg>
   <div class="container" style="position:relative;z-index:1">
     <div class="hero-badge"><span class="hero-badge-dot"></span>International Commercial Partnership</div>
-    <h1 class="hero-h1">We Enter the Market.<br><span class="gold">We Build the Revenue.</span></h1>
+    <h1 class="hero-h1">We Enter the Market.<br><span class="serif gold">We Build the Revenue.</span></h1>
     <p class="hero-tagline">We Enter the Market. We Build the Relationships. We Drive the Revenue.</p>
-    <div class="hero-body">
+    <div class="hero-body" style="margin-top:20px;margin-left:auto;margin-right:auto">
       Every year, B2B founders spend six to twelve months and real money trying to enter a market — and end up with nothing to show for it. Not because the product failed. <strong>Because they went in alone, without the intelligence, the relationships, or the senior commercial presence that the market demands.</strong>
       <br><br>PolyCraft is how serious B2B companies enter markets and win them.
     </div>
@@ -282,6 +301,7 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
       <a href="https://cal.com/dany-kanzari-nf8bt3/polycraft-discovery-call" target="_blank" class="btn">Book a Discovery Call <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="scorecard.html" class="btn-outline">Take the Free Scorecard <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M8 3l3.5 3.5L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
+    <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 36px">Enter. Build. Own.</p>
     <div class="stats-grid">
       <div><div class="stat-value">20+</div><div class="stat-label">Years in B2B commercial</div></div>
       <div><div class="stat-value">7</div><div class="stat-label">Countries of direct experience</div></div>
@@ -441,7 +461,7 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
     <div style="text-align:center;margin-bottom:40px"><span class="label">The PolyCraft Difference</span><h2>The combination that is genuinely difficult to replicate.</h2></div>
     <div class="quote-block" style="text-align:left">
       <p class="quote-text">"I have spent 20 years walking into markets that companies wanted but did not yet own — and building the commercial relationships that made them real."</p>
-      <p class="quote-attr">— Hosni Kanzari, Founder & Managing Director</p>
+      <p class="quote-attr">— Dany Kanzari, Founder & Managing Director</p>
     </div>
     <p class="muted" style="text-align:center;max-width:700px;margin:0 auto 40px;font-size:14px">PolyCraft occupies a specific gap in the market for international B2B commercial partnership. Not an agency promising volume. Not a consultant writing reports and leaving. Not a full-time hire costing a quarter of a million dollars a year. A senior commercial partner with the relationships, the market knowledge, and the language to enter any of six markets and build something that lasts.</p>
     <div class="why-grid">
@@ -461,22 +481,46 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
 <section id="founder">
   <div class="container-md">
     <div class="founder-grid">
-      <div style="position:relative">
-        <div class="founder-photo">
-          <img src="dany-kanzari.png" alt="Hosni (Dany) Kanzari — Founder, PolyCraft Consulting" onerror="this.parentElement.style.minHeight='360px'"/>
+      <div class="founder-card">
+        <div class="founder-avatar">
+          <img src="dany-kanzari.png" alt="Dany Kanzari — Founder & Managing Director, PolyCraft"/>
         </div>
-        <div class="founder-badge">20+ Yrs Experience</div>
+        <div class="founder-card-name">Dany Kanzari</div>
+        <div class="founder-card-title">Founder & Managing Director, PolyCraft</div>
+        <div class="founder-meta">
+          <div class="founder-meta-row">
+            <span class="founder-meta-key">Based</span>
+            <span class="founder-meta-val">Tunisia — US, UK, Europe & MENA</span>
+          </div>
+          <div class="founder-meta-row">
+            <span class="founder-meta-key">Experience</span>
+            <span class="founder-meta-val">20+ years B2B commercial across 7 countries</span>
+          </div>
+          <div class="founder-meta-row">
+            <span class="founder-meta-key">Sectors</span>
+            <span class="founder-meta-val">Pharma intelligence, promotional products, international trade</span>
+          </div>
+          <div class="founder-meta-row">
+            <span class="founder-meta-key">Languages</span>
+            <div class="lang-pills">
+              <span class="lang-pill">Arabic — Native</span>
+              <span class="lang-pill">French — Fluent</span>
+              <span class="lang-pill">English — Fluent</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://cal.com/dany-kanzari-nf8bt3/polycraft-discovery-call" target="_blank" class="btn" style="width:100%;justify-content:center">Book a Discovery Call →</a>
       </div>
       <div>
-        <span class="label">The Founder</span>
-        <h2 style="font-size:36px;margin-bottom:20px">Hosni Kanzari</h2>
-        <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.6;margin-bottom:16px">20+ years of commercial leadership across technology, SaaS, and professional services — deployed across Europe, the Middle East, and North Africa.</p>
-        <p class="muted" style="font-size:13px;margin-bottom:28px">Having built commercial teams from zero in 7 countries, operating in 3 languages, and closing enterprise deals at C-Suite level, Hosni created PolyCraft to give mid-market B2B companies access to the same commercial infrastructure that enterprise organisations take for granted.</p>
-        <div class="founder-stats">
-          <div class="founder-stat"><div class="founder-stat-val">7</div><div class="founder-stat-lbl">Countries</div></div>
-          <div class="founder-stat"><div class="founder-stat-val">3</div><div class="founder-stat-lbl">Languages</div></div>
-          <div class="founder-stat"><div class="founder-stat-val">6</div><div class="founder-stat-lbl">Markets</div></div>
+        <div class="founder-story-label">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polygon points="6,0 12,6 6,12 0,6" fill="#F4A623"/></svg>
+          <span class="label" style="margin:0">The Founder</span>
         </div>
+        <h2 class="founder-story-h">Built by someone who has done the work. In the markets. With the clients.</h2>
+        <p class="founder-story-quote">I have spent twenty years being the senior commercial person that other companies needed but could not afford to keep permanently.</p>
+        <p class="founder-story-body">It started in England in 2003. Door-to-door for EDF Energy, rain and clipboard, learning that the only thing that works in B2B sales is earned trust. That team won Best Team of the Year twice — not through pressure, through genuine conversation and discipline.</p>
+        <p class="founder-story-body">Over the next two decades, that principle carried through the UK, Ireland, France, Switzerland, Slovakia, Tunisia, and the United States. Different industries — pharmaceutical market intelligence, promotional products, international trade, B2B commercial representation. One constant: <span class="highlight">the companies that win long-term are the most trusted ones, not the fastest.</span></p>
+        <p class="founder-story-body">PolyCraft is the system built to make that principle repeatable — for B2B companies that deserve to grow faster than their current commercial infrastructure allows.</p>
       </div>
     </div>
   </div>
@@ -575,11 +619,23 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
 
 <!-- PRIVACY POLICY -->
 <div class="legal-page" id="privacy-page">
-  <div class="container-sm">
-    <button class="back-btn" onclick="showMain()">← Back to site</button>
-    <span class="label">Legal</span>
-    <h1 style="font-size:clamp(28px,4vw,40px);margin-bottom:12px;font-weight:800">Privacy Policy</h1>
-    <p class="muted" style="font-size:12px;margin-bottom:32px">Effective date: 1 May 2025 · Last reviewed: April 2026 · Version 1.0</p>
+  <div class="legal-nav">
+    <div class="legal-nav-logo" onclick="showMain()">
+      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+        <path d="M14,0 L0,14 L14,14 Z" fill="#1B4F8A"/>
+        <path d="M14,0 L28,14 L14,14 Z" fill="#F4A623"/>
+        <path d="M0,14 L14,28 L14,14 Z" fill="#2E75C8"/>
+        <path d="M28,14 L14,28 L14,14 Z" fill="#1B4F8A" opacity="0.65"/>
+      </svg>
+      <div>
+        <div class="logo-name" style="font-size:14px">POLY<span style="color:#F4A623">CRAFT</span></div>
+        <div class="logo-tag">Enter. Build. Own.</div>
+      </div>
+    </div>
+    <span class="legal-nav-title">Privacy Policy</span>
+    <button class="legal-back-btn" onclick="showMain()">← Back to site</button>
+  </div>
+  <div class="legal-content">
     <div class="lib">This Privacy Policy explains how <strong>POLY CRAFT CONSULTING (SUARL)</strong>, trading as PolyCraft Consulting, collects, uses, stores, and protects personal data. PolyCraft Consulting is committed to handling personal data lawfully under EU GDPR, UK GDPR, UAE PDPL, Canadian PIPEDA, and Tunisian Act No. 2004-63.</div>
     <div class="ls"><h2><span>1.</span>Data Controller</h2>
       <div class="lib"><strong>POLY CRAFT CONSULTING (SUARL)</strong><br>Trading as: PolyCraft Consulting · Unique Identifier: 1777483F · Trade Register: C03195172022<br>18 January Street, Ariana Center, Staircase C, Office C408, Ariana City 2080, Tunisia<br>Managing Director: Hosni Kanzari · <a href="mailto:privacy@polycraftpartners.com">privacy@polycraftpartners.com</a></div>
@@ -631,11 +687,23 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
 
 <!-- TERMS -->
 <div class="legal-page" id="terms-page">
-  <div class="container-sm">
-    <button class="back-btn" onclick="showMain()">← Back to site</button>
-    <span class="label">Legal</span>
-    <h1 style="font-size:clamp(28px,4vw,40px);margin-bottom:12px;font-weight:800">Terms & Conditions</h1>
-    <p class="muted" style="font-size:12px;margin-bottom:32px">Effective date: 1 May 2025 · Last reviewed: April 2026 · Version 1.0</p>
+  <div class="legal-nav">
+    <div class="legal-nav-logo" onclick="showMain()">
+      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+        <path d="M14,0 L0,14 L14,14 Z" fill="#1B4F8A"/>
+        <path d="M14,0 L28,14 L14,14 Z" fill="#F4A623"/>
+        <path d="M0,14 L14,28 L14,14 Z" fill="#2E75C8"/>
+        <path d="M28,14 L14,28 L14,14 Z" fill="#1B4F8A" opacity="0.65"/>
+      </svg>
+      <div>
+        <div class="logo-name" style="font-size:14px">POLY<span style="color:#F4A623">CRAFT</span></div>
+        <div class="logo-tag">Enter. Build. Own.</div>
+      </div>
+    </div>
+    <span class="legal-nav-title">Terms & Conditions</span>
+    <button class="legal-back-btn" onclick="showMain()">← Back to site</button>
+  </div>
+  <div class="legal-content">
     <div class="lib">These Terms govern your use of the PolyCraft Consulting website, its tools, and any services provided by <strong>POLY CRAFT CONSULTING (SUARL)</strong>, trading as PolyCraft Consulting. By accessing the website or enquiring about services, you agree to these Terms.</div>
     <div class="ls"><h2><span>1.</span>About PolyCraft Consulting</h2>
       <div class="lib"><strong>POLY CRAFT CONSULTING (SUARL)</strong> · Trading as: PolyCraft Consulting<br>Société Unipersonnelle à Responsabilité Limitée — Single-Member LLC, Tunisian law<br>Unique Identifier: 1777483F · Trade Register: C03195172022 · NACE: 7022<br>Incorporated: 14 June 2022<br>18 January Street, Ariana Center, Staircase C, Office C408, Ariana City 2080, Tunisia<br>Managing Director: Hosni Kanzari · <a href="mailto:hello@polycraftpartners.com">hello@polycraftpartners.com</a></div>
@@ -670,7 +738,15 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
 <footer id="site-footer">
   <div class="footer-grid">
     <div>
-      <div class="footer-brand">POLY<span>CRAFT</span></div>
+      <div class="footer-brand">
+        <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+          <path d="M14,0 L0,14 L14,14 Z" fill="#1B4F8A"/>
+          <path d="M14,0 L28,14 L14,14 Z" fill="#F4A623"/>
+          <path d="M0,14 L14,28 L14,14 Z" fill="#2E75C8"/>
+          <path d="M28,14 L14,28 L14,14 Z" fill="#1B4F8A" opacity="0.65"/>
+        </svg>
+        POLY<span>CRAFT</span>
+      </div>
       <p class="footer-desc">Commercial market entry and fractional commercial leadership for ambitious B2B companies expanding internationally.</p>
     </div>
     <div>
@@ -688,6 +764,11 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
       <div class="footer-links">
         <a href="https://cal.com/dany-kanzari-nf8bt3/polycraft-discovery-call" target="_blank">Book a Discovery Call</a>
         <a href="scorecard.html">Free Scorecard</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <div class="footer-links">
         <a onclick="showPrivacy()">Privacy Policy</a>
         <a onclick="showTerms()">Terms & Conditions</a>
       </div>
@@ -695,15 +776,13 @@ footer{border-top:1px solid var(--border);padding:64px 40px 32px;background:var(
   </div>
   <div class="footer-bottom">
     <p>© <span id="yr"></span> POLY CRAFT CONSULTING (SUARL) · All rights reserved · Reg. 1777483F · Ariana, Tunisia</p>
-    <div class="footer-legal">
-      <a onclick="showPrivacy()">Privacy Policy</a>
-      <a onclick="showTerms()">Terms & Conditions</a>
-    </div>
   </div>
 </footer>
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+const founderImg=document.querySelector('.founder-avatar img');
+if(founderImg){founderImg.onerror=function(){this.style.display='none';const fb=document.createElement('span');fb.style.cssText='font-size:32px;font-weight:800;color:#F4A623;font-family:Syne,sans-serif';fb.textContent='DK';this.parentElement.appendChild(fb)}}
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>30));
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
 function closeMenu(){document.getElementById('mob').classList.remove('open')}
