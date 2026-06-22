@@ -1,0 +1,121 @@
+import { useState } from 'react'
+import ParticipationCounter from '../components/ParticipationCounter'
+import Logo from '../components/Logo'
+import DiamondWatermark from '../components/DiamondWatermark'
+
+const ASSESSMENT_URL =
+  typeof window !== 'undefined' ? window.location.origin : 'https://founder-growth-benchmark.vercel.app'
+
+const SHARE_MESSAGE =
+  'I just took the Founder Growth Benchmark, a short assessment for founder-led B2B businesses. Worth three minutes if you want to see how your commercial setup compares to peers.'
+
+export default function ThankYouPage() {
+  const [copied, setCopied] = useState(false)
+
+  function copyLink() {
+    navigator.clipboard.writeText(ASSESSMENT_URL).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
+  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    ASSESSMENT_URL
+  )}`
+
+  const whatsAppShareUrl = `https://wa.me/?text=${encodeURIComponent(
+    `${SHARE_MESSAGE} ${ASSESSMENT_URL}`
+  )}`
+
+  return (
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 z-0">
+        <DiamondWatermark />
+      </div>
+
+      <header className="px-6 py-6 md:px-12 relative z-10">
+        <Logo />
+      </header>
+
+      <main className="flex-1 flex items-center px-6 md:px-12 relative z-10">
+        <div className="max-w-2xl mx-auto w-full py-12 fade-up">
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold text-textPrimary leading-[1.1] mb-3">
+            Thank you. Your responses are in.
+          </h1>
+          <p className="text-textSecondary text-lg mb-10">Here is what happens next.</p>
+
+          <p className="text-textSecondary leading-relaxed mb-8">
+            You have just contributed to the first Founder Growth Benchmark for B2B businesses.
+            When we reach our threshold, you will receive a personalised report showing exactly
+            how your commercial infrastructure compares to peers in similar businesses.
+          </p>
+
+          <div className="bg-surface border border-border rounded-lg p-6 mb-8">
+            <h3 className="font-display text-sm font-bold text-gold uppercase tracking-wide mb-4">
+              What your report will include
+            </h3>
+            <div className="space-y-3">
+              {[
+                'Your Founder Growth Score',
+                'Dimension breakdown across five commercial areas',
+                'Peer comparison by industry and company size',
+                'Your single biggest identified commercial risk'
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-gold" />
+                  <span className="text-textSecondary text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <ParticipationCounter />
+          </div>
+
+          <div className="border-t border-border pt-8">
+            <h3 className="font-display text-lg font-bold text-textPrimary mb-2">
+              Know a founder this would help?
+            </h3>
+            <p className="text-textSecondary text-sm mb-5">
+              Sharing it helps us reach the threshold faster, which means everyone gets their
+              report sooner.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={copyLink}
+                className="px-5 py-3 rounded-lg border border-border bg-surface text-textSecondary hover:border-gold hover:text-textPrimary transition-colors text-sm font-medium"
+              >
+                {copied ? 'Link copied' : 'Copy link'}
+              </button>
+              <a
+                href={linkedInShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-lg border border-border bg-surface text-textSecondary hover:border-blue hover:text-textPrimary transition-colors text-sm font-medium"
+              >
+                Share on LinkedIn
+              </a>
+              <a
+                href={whatsAppShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-lg border border-border bg-surface text-textSecondary hover:border-gold hover:text-textPrimary transition-colors text-sm font-medium"
+              >
+                Share on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <p className="text-textMuted text-sm mt-12">
+            You will hear from us.
+            <br />
+            Dany Kanzari, PolyCraft Consulting.
+          </p>
+        </div>
+      </main>
+    </div>
+  )
+}
